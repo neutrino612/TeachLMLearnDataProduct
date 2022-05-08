@@ -1,5 +1,5 @@
 1、思维方式转变：
-业务产品经理——数据产品经理
+业务用户产品经理——数据产品经理
 数据权威性是根本
 2、方法论
 （1）归纳与演绎思维
@@ -9,7 +9,7 @@
 （5）项目思维
 （6）其他思维：5W+2H who/when/where/what/why how/how much
 
-其中数据分析思维：
+其中数据分析思维：问题指标不达-差距-原因——数据论证-解决方案
 （1）漏斗模型思维：分解+量化（电商思维、推荐思维）被动   演绎分析+归纳解决
 用数据验证假设原因，确定原因后制定解决方案（帮助业务和运营分析、决策）
 （2）海盗模型：AARRR海盗模型  主动行
@@ -24,6 +24,7 @@
 4、数据产品经理工作的重点区域：以及工具使用
 （1）PRD文档：数据产品文档样例学习+指标文档和埋点文档文档编辑器（Wiki/GoogleDoc/石墨文档）
 	PlantUML要学习   Axure复习    ProcessOn已会  mindmaster 已会
+	https://baijiahao.baidu.com/s?id=1599433496793814200&wfr=spider&for=pc  下载java.jdk
 （2）文档管理：索引规范：命名规范+版本管理   [wiki   git]
 （3）数据采集：+工具（前端埋点）友盟、CNZZ 要学习   爬虫【八爪鱼+后羿  python】复习
 
@@ -33,6 +34,16 @@ https://www.bilibili.com/video/BV1MW411r723?spm_id_from=333.337.search-card.all.
 （5）可视化展现+工具（dashboard+tableau+FineBI+Excel等）要学习
 （6）运营分析：指标、标签体系（事实标签口径、预测标签【机器学习算法  线性回归、决策树、SVIM、神经网络、IFIDF搜索推荐】）ing
 （7）数据治理：Datablau数据治理平台  了解一下
+
+
+
+5、知识补充
+（1）关于API和SDK的关系
+https://www.cnblogs.com/tanshaoshenghao/p/16217608.html
+API 的全称是：Application Program Interface（应用程序接口）
+SDK 的全称是：Software Development Kit（软件开发工具包）
+如果让我总结 API 和 SDK 的区别，我觉得 API 可以理解成一种标准吧，我们按照服务提供商定义的 API 标准去调用他们的服务，就能得到相应的结果。
+而SDK 可以理解为对 API 背后服务的一种封装，它更贴近用户，能大幅降低用户使用服务的开发成本
 
 
 
