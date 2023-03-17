@@ -1,0 +1,4 @@
+1、generative pre-training生成式预训练；BERT   谷歌和GPT  OPEN-AI
+
+    GPT1   自回归模型
+    BERT 完形填空（上下文）；预测未来GPT（自回归模型，上文  不断预测下文）
