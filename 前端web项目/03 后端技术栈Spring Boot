@@ -11,13 +11,16 @@ Spring Boot 在继承Spring框架
 
 Spring Boot的横空出世解决了这个问题。Spring Boot通过大量的自动化配置等方式简化了原Spring项目开发过程中开发人员的配置步骤
 
-3、搭建Spring Boot项目的基础开发环境，包括JDK的安装和配置【写java语言的开发环境  将java语言转化操作系统理解的语言】、Maven的安装和配置，以及开发工具IDEA的安装和配置
+3、搭建Spring Boot项目的基础开发环境，包括JDK的安装和配置、Maven的安装和配置，以及开发工具IDEA的安装和配置
 
 3-1 JDK 安装JDK
-    下载————配置环境变量————
+    写java语言的开发环境  将java语言转化操作系统理解的语言
+    
 
 3-2 Maven的安装和配置  
     Maven是Apache的一个软件项目管理和构建工具，它可以对Java项目进行构建和依赖管理  下载第三方依赖包的
     
 3-3 开发工具IDEA的安装和配置
     IDEA编辑器
+
+

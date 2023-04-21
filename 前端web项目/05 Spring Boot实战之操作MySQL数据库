@@ -1,0 +1,44 @@
+1、在Spring Boot中进行数据库相关的功能开发，包括基础的整合操作、JDBC的整合和MyBatis框架的整合
+
+2、MySQL是最流行的关系型数据库管理系统之一，
+Java程序在与MySQL连接时需要通过JDBC来实现。JDBC全称为Java Data Base Connectivity（Java数据库连接）
+主要由接口组成，是一种用于执行SQL语句的Java API
+
+2-1 java 程序获取数据库连接，以URL方式指定不同类型数据库的驱动程序，
+
+
+3、 Spring Boot如何使用JDBC进行实际演示
+
+3-1 在项目中引入相应的场景启动器，引入依赖的JAR包
+
+3-2 添加完相关依赖后
+    启动MySQL数据库并在新建的Spring Boot项目中配置数据库连接的地址和账号密码，正确连接数据库
+
+
+3-3 验证Spring Boot连接MySQL数据库
+    测试类来测试
+
+3-4 使用JdbcTemplate进行数据库的增、删、改、查
+
+        JdbcTemplate是Spring对JDBC的封装
+
+
+4、MyBatis简介
+
+4-1 MyBatis是支持定制化SQL、存储过程和高级映射的优秀持久层框架。
+
+MyBatis的优点如下：
+封装了JDBC大部分操作，减少了开发人员的工作量。
+半自动化的操作对于编写SQL语句灵活度更高。
+Java代码与SQL语句分离，降低了维护难度。
+自动映射结果集，减少重复的编码工作。
+开源社区十分活跃，文档齐全，学习成本低。
+
+4-2 
+在数据库中新建了一个名称为tb_user的数据表，表中有id、name和password共3个字
+使用MyBatis进行数据的增、删、改、查操作
+
+4-3
+新建实体类和Mapper接口
+
+
