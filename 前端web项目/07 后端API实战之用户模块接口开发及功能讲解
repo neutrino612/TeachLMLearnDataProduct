@@ -25,7 +25,89 @@
         所以结合安全性：将通过生成用户令牌(token)的形式进行用户状态的保持和验证
 
         1-4 用户模块表结构设计
-            登录接口实现：
+        创建tb_newbee_mall_user用户表和tb_newbee_mall_user_token用户的token记录表
+            
+2、登录接口实现：
+            (1)新建实体类和Mapper接口:
+            新建ltd.newbee.mall包
+                新建entity包，选中entity包并右击
+                “New”→“Java Class”选项
+                窗口中输入“MallUser”，新建MallUser类，输入代码
+                                    新建MallUserToken类，输入代码
+            ltd.newbee.mall包中新建dao包
+                选中dao包并右击
+                “New”→“Java Class”选项
+                窗口中输入“MallUserMapper”，新建MallUserMapper类,并选中“Interface”选项
+                                          新建NewBeeMallUserTokenMapper类
+            (2)创建Mapper接口的映射文件   
+            创建Mapper接口的映射文件
+                在resources目录下新建mapper目录
+                mapper目录下新建MallUserMapper接口的映射文件MallUserMapper.xml
+                    定义映射文件与Mapper接口的对应关系:
+                    配置表结构和实体类的对应关系;
+                    按照对应的接口方法，编写具体的SQL语句，最终的MallUserMapper.xml文件如下
+                        MallUserMapper.xml文件中定义了selectByLoginNameAndPasswd()方法具体执行的SQL语句
+                        并通过用户名和密码查询tb_newbee_mall_user表中的记录
+
+                mapper目录下新建NewBeeMallUserTokenMapper.xml文件
+
+            (3) 业务层代码的实现
+            ltd.newbee.mall包中
+                新建service包，并右击
+                菜单中选择“New”→“Java Class”
+                窗口中输入“NewBeeMallUserService”，并选中“Interface”选项，输入代码
+                    ltd.newbee.mall.service包中新建impl包，再选中impl包并右击
+                    在弹出的快捷菜单中选择“New”→“Java Class”选项
+                    窗口中输入“NewBeeMallUserServiceImpl”类
+                    NewBeeMallUserServiceImpl类是用户模块业务层代码的实现类，用于编写具体的方法
+
+                    (1)根据用户名称和密码查询用户数据，如果存在，则继续后续流程。
+                    (2)判断用户状态是否正常，如果一切正常，则继续后续流程。
+                    (3)生成token值，这里可以简单地将其理解为生成一个随机字符串，在这一步其实已经完成了登录逻辑，只是后续需要对token值进行查询，所以还需要将用户的token信息入库。
+                    (4)根据用户id查询token信息表，以此结果来决定是进行token更新操作，还是进行新增操作。
+                    (5)根据当前时间获取token过期时间。
+                    (6)封装用户token信息并进行入库操作（新增或修改）。
+                    (7)返回token值。
+
+            (4) 用户登录接口的参数设计
+                前端需要向后端传输两个参数：登录名和密码
+                POST方法，两个参数会被封装成一个对象传递给后端接口
+                需要定义一个JavaBean来接收登录参数
+
+            (5) 控制层代码的实现
+                ltd.newbee.mall包中新建api包并右击
+                “New”→“Java Class”选项
+                窗口中输入“NewBeeMallPersonalAPI”，新建“NewBeeMallPersonalAPI类，用于对登录请求进行处理
+                最后在NewBeeMallPersonalAPI类中新增代码
+
+            (6) 接口测试
+                启动Spring Boot项目，并在浏览器中输入Swagger接口文档地址：
+                打开接口文档，单击“Try it out”按钮，输入登录用户名和密码，完成后单击“Execute”按钮发送登录请求
+                登录信息都正确，就可以得到一个登录成功的token字段，Result的data字段
+
+3、用户身份验证代码实现
+        登录功能代码用于验证登录信息并生成token值，当然这只是第一步，生成了身份验证信息
+        接下来介绍登录模块中的用户身份保持和身份验证
+            (1) 前端存储和使用token
+            发送登录请求后，如果登录成功，则后端API中会生成和返回token
+            前端则需要存储和使用token
+            前端的处理方式首先会将token字符串存储到localStorage对象中
+            进行资源请求，axios.js，如果存在token值，则将其放入请求的header对象中，header参数的名称即为token
+            
+            (2)后端处理token及身份验证
+            生成token，已经讲过
+            获取前端请求中的token值
+            验证token值，判断是否存在、是否过期等           
+            登录状态即“token值是否存在及token值是否有效”
+            
+
+
+
+
+
+
+
+
             
 
 
