@@ -57,6 +57,7 @@
                 菜单中选择“New”→“Java Class”
                 窗口中输入“NewBeeMallUserService”，并选中“Interface”选项，输入代码
                     ltd.newbee.mall.service包中新建impl包，再选中impl包并右击
+                    【impl这个是实现的implement的缩写，一般放业务的实现方式】
                     在弹出的快捷菜单中选择“New”→“Java Class”选项
                     窗口中输入“NewBeeMallUserServiceImpl”类
                     NewBeeMallUserServiceImpl类是用户模块业务层代码的实现类，用于编写具体的方法
